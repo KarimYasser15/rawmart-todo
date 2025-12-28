@@ -165,6 +165,59 @@
     font-weight: 500;
 }
 
+.delete-zone {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(248, 250, 252, 0.5);
+    border: 2px dashed rgba(220, 38, 38, 0.3);
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.2s ease;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.delete-zone.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.delete-zone.drag-over {
+    background: rgba(220, 38, 38, 0.1);
+    border-color: rgba(220, 38, 38, 0.6);
+    border-style: solid;
+    transform: scale(1.02);
+}
+
+.delete-zone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.delete-zone svg {
+    color: rgba(220, 38, 38, 0.6);
+    transition: all 0.2s ease;
+}
+
+.delete-zone.drag-over svg {
+    color: rgba(220, 38, 38, 0.9);
+    transform: scale(1.1);
+}
+
+.delete-zone-text {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(220, 38, 38, 0.7);
+    transition: color 0.2s ease;
+}
+
+.delete-zone.drag-over .delete-zone-text {
+    color: rgba(220, 38, 38, 1);
+}
+
 .home-spinner {
     width: 48px;
     height: 48px;
@@ -292,6 +345,20 @@
         font-size: 0.85rem;
     }
 
+    .delete-zone {
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .delete-zone svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .delete-zone-text {
+        font-size: 0.85rem;
+    }
+
     .home-spinner {
         width: 40px;
         height: 40px;
@@ -331,6 +398,21 @@
     }
 
     .error-message p {
+        font-size: 0.8rem;
+    }
+
+    .delete-zone {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .delete-zone svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .delete-zone-text {
         font-size: 0.8rem;
     }
 }
