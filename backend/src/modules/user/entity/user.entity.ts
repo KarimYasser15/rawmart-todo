@@ -1,4 +1,5 @@
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
+import { Todo } from './todo.entity';
 
 @Entity()
 export class User {
@@ -16,6 +17,9 @@ export class User {
 
     @Column({ type: 'int', default: 1 })
     tokenVersion: number;
+
+    @OneToMany(() => Todo, (todo) => todo.createdBy, { eager: false })
+    todos: Todo[];
 
     @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date;
