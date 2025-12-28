@@ -4,6 +4,7 @@ import "./home.css";
 import type { Todo } from "../interfaces/todo";
 import type { TodoStatus } from "../interfaces/todo-status";
 import apiClient from "../api/api-client";
+import UpdateTodoModal from "./update-todo-modal";
 
 function Home() {
     const [isLoading, setIsLoading] = useState(false);
@@ -13,6 +14,8 @@ function Home() {
     const [draggedTodo, setDraggedTodo] = useState<Todo | null>(null);
     const [draggedOverColumn, setDraggedOverColumn] = useState<TodoStatus | null>(null);
     const [draggedOverDelete, setDraggedOverDelete] = useState(false);
+    const [selectedTodo, setSelectedTodo] = useState<Todo | null>(null);
+    const [isDragging, setIsDragging] = useState(false);
 
     const navigate = useNavigate();
 
@@ -57,7 +60,17 @@ function Home() {
     };
 
     const handleCardClick = (todo: Todo) => {
-        navigate(`/todo/${todo.id}`);
+        if (!isDragging) {
+            setSelectedTodo(todo);
+        }
+    };
+
+    const handleCloseModal = () => {
+        setSelectedTodo(null);
+    };
+
+    const handleTodoUpdate = () => {
+        fetchTodos();
     };
 
     const handleCreateTodo = () => {
@@ -65,12 +78,14 @@ function Home() {
     };
 
     const handleDragStart = (e: React.DragEvent, todo: Todo) => {
+        setIsDragging(true);
         setDraggedTodo(todo);
         e.dataTransfer.effectAllowed = "move";
         e.dataTransfer.setData("text/plain", todo.id.toString());
     };
 
     const handleDragEnd = () => {
+        setIsDragging(false);
         setDraggedTodo(null);
         setDraggedOverColumn(null);
         setDraggedOverDelete(false);
@@ -304,6 +319,15 @@ function Home() {
                 <div className="error-message">
                     <p>{errors}</p>
                 </div>
+            )}
+
+            {selectedTodo && userId && (
+                <UpdateTodoModal
+                    todo={selectedTodo}
+                    userId={userId}
+                    onClose={handleCloseModal}
+                    onUpdate={handleTodoUpdate}
+                />
             )}
         </div>
     );

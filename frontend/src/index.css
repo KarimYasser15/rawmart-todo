@@ -1,24 +1,11 @@
 :root {
-  color-scheme: light;
   --font-sans: "Inter", "Segoe UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-  --surface: #ffffff;
-  --surface-muted: rgba(255, 255, 255, 0.75);
-  --surface-subtle: rgba(255, 255, 255, 0.6);
   --backdrop: linear-gradient(145deg, #f6f0ff 0%, #f9fafc 55%, #f3f6fb 100%);
   --border-soft: rgba(84, 112, 198, 0.12);
-  --border-strong: rgba(12, 23, 52, 0.08);
-  --shadow-lg: 0 32px 80px rgba(15, 23, 42, 0.14);
-  --shadow-md: 0 18px 45px rgba(15, 23, 42, 0.12);
-  --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.08);
   --text-strong: #111827;
   --text-muted: #5f6b7a;
   --text-soft: #94a3b8;
-  --brand: #c89844;
-  --brand-strong: #b1863d;
-  --brand-soft: rgba(200, 152, 68, 0.14);
   --accent-blue: #2563eb;
-  --accent-blue-soft: rgba(37, 99, 235, 0.18);
-  --success: #16a34a;
   --error: #dc2626;
   --transition-base: 200ms ease;
 }
@@ -76,77 +63,6 @@ textarea:focus-visible {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
 }
 
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem 1.5rem;
-}
-
-.card {
-  background: var(--surface);
-  color: var(--text-strong);
-  border-radius: 20px;
-  padding: 2.5rem;
-  width: min(420px, 100%);
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(18px);
-}
-
-.text-destructive {
-  color: var(--error);
-  font-size: 0.85rem;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 12px;
-  border: none;
-  padding: 0.85rem 1.6rem;
-  font-weight: 600;
-  background: var(--surface);
-  color: var(--text-strong);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-primary {
-  background: linear-gradient(130deg, #2563eb, #1d4ed8);
-  color: #fff;
-  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.32);
-}
-
-.btn-primary:hover:not(:disabled) {
-  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.36);
-}
-
-.btn-pill {
-  border-radius: 999px;
-}
-
-.input-field {
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid rgba(148, 163, 184, 0.32);
-  padding: 0.9rem 1rem;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  transition: border var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
-}
-
-.input-field:focus {
-  border-color: rgba(37, 99, 235, 0.4);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
-}
-
-.input-field.error {
-  border-color: rgba(220, 38, 38, 0.45);
-  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.18);
-}
 
 .navbar {
   position: sticky;
@@ -173,8 +89,6 @@ textarea:focus-visible {
   gap: 0.75rem;
   flex-shrink: 0;
 }
-
-
 
 .brand-name {
   font-size: 1.25rem;
@@ -266,32 +180,6 @@ textarea:focus-visible {
   stroke-width: 2;
 }
 
-.sign-in-btn {
-  border: none;
-  border-radius: 12px;
-  padding: 0.75rem 1.4rem;
-  background: linear-gradient(135deg, var(--brand), var(--brand-strong));
-  color: #fff;
-  font-weight: 600;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-  box-shadow: 0 12px 32px rgba(200, 152, 68, 0.28);
-}
-
-.sign-in-btn:hover:not(:disabled) {
-  opacity: 0.9;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.45rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(37, 99, 235, 0.12);
-  color: #1d4ed8;
-  font-weight: 600;
-  font-size: 0.85rem;
-}
 
 /* Tablet and below */
 @media (max-width: 1024px) {
@@ -358,10 +246,6 @@ textarea:focus-visible {
     height: 14px;
   }
 
-  .sign-in-btn {
-    padding: 0.65rem 1.2rem;
-    font-size: 0.9rem;
-  }
 }
 
 /* Small mobile devices */
@@ -414,20 +298,6 @@ textarea:focus-visible {
     height: 14px;
   }
 
-  .sign-in-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
-    min-height: 44px;
-  }
-
-  .btn {
-    padding: 0.75rem 1.4rem;
-    font-size: 0.9rem;
-  }
-
-  .card {
-    padding: 2rem 1.5rem;
-  }
 }
 
 /* Very small mobile devices */
@@ -459,8 +329,4 @@ textarea:focus-visible {
     min-height: 40px;
   }
 
-  .sign-in-btn {
-    padding: 0.55rem 0.875rem;
-    font-size: 0.8rem;
-  }
 }

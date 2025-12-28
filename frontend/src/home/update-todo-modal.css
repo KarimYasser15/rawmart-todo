@@ -1,0 +1,288 @@
+.update-todo-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.update-todo-modal {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 40px 80px rgba(15, 23, 42, 0.3);
+    animation: slideUp 0.3s ease;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.update-todo-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.update-todo-modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-strong);
+    letter-spacing: -0.02em;
+}
+
+.update-todo-modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.update-todo-modal-close:hover {
+    background: rgba(148, 163, 184, 0.15);
+    color: var(--text-strong);
+}
+
+.update-todo-modal-close:active {
+    transform: scale(0.95);
+}
+
+.update-todo-modal-close svg {
+    width: 18px;
+    height: 18px;
+}
+
+.update-todo-modal-alert {
+    padding: 0.875rem 1rem;
+    border-radius: 12px;
+    background: rgba(248, 113, 113, 0.12);
+    border: 1px solid rgba(248, 113, 113, 0.25);
+    color: #991b1b;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.update-todo-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.update-todo-modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.update-todo-modal-field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.update-todo-modal-input,
+.update-todo-modal-textarea,
+.update-todo-modal-select {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.32);
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.95);
+    transition: border var(--transition-base), box-shadow var(--transition-base);
+    font-family: inherit;
+    resize: vertical;
+}
+
+.update-todo-modal-textarea {
+    min-height: 100px;
+    line-height: 1.6;
+}
+
+.update-todo-modal-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%235f6b7a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.update-todo-modal-input:focus,
+.update-todo-modal-textarea:focus,
+.update-todo-modal-select:focus {
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+    outline: none;
+}
+
+.update-todo-modal-input.error,
+.update-todo-modal-textarea.error {
+    border-color: rgba(220, 38, 38, 0.5);
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.18);
+}
+
+.update-todo-modal-field-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 1.25rem;
+}
+
+.update-todo-modal-error {
+    color: var(--error);
+    font-size: 0.8rem;
+}
+
+.update-todo-modal-counter {
+    color: var(--text-soft);
+    font-size: 0.75rem;
+    margin-left: auto;
+}
+
+.update-todo-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.update-todo-modal-cancel,
+.update-todo-modal-submit {
+    flex: 1;
+    border-radius: 12px;
+    padding: 0.875rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+}
+
+.update-todo-modal-cancel {
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--text-muted);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.update-todo-modal-cancel:hover:not(:disabled) {
+    background: rgba(148, 163, 184, 0.15);
+    color: var(--text-strong);
+    border-color: rgba(148, 163, 184, 0.3);
+}
+
+.update-todo-modal-cancel:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.update-todo-modal-submit {
+    background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.32);
+}
+
+.update-todo-modal-submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 32px rgba(37, 99, 235, 0.36);
+}
+
+.update-todo-modal-submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.update-todo-modal-cancel:disabled,
+.update-todo-modal-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .update-todo-modal-overlay {
+        padding: 0.5rem;
+    }
+
+    .update-todo-modal {
+        padding: 1.5rem;
+        border-radius: 16px;
+        max-height: 95vh;
+    }
+
+    .update-todo-modal-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .update-todo-modal-close {
+        width: 28px;
+        height: 28px;
+    }
+
+    .update-todo-modal-close svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .update-todo-modal-form {
+        gap: 1rem;
+    }
+
+    .update-todo-modal-input,
+    .update-todo-modal-textarea,
+    .update-todo-modal-select {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.9rem;
+    }
+
+    .update-todo-modal-textarea {
+        min-height: 80px;
+    }
+
+    .update-todo-modal-actions {
+        flex-direction: column-reverse;
+        gap: 0.625rem;
+    }
+}
+
