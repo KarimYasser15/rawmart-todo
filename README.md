@@ -38,8 +38,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd Rawmart-Todo
+git clone <https://github.com/KarimYasser15/rawmart-todo>
+cd rawmart-todo
 ```
 
 ### 2. Backend Setup
