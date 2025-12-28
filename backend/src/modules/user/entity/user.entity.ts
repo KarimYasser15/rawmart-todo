@@ -1,0 +1,25 @@
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
+
+@Entity()
+export class User {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column({ type: 'varchar', length: 100, })
+    fullName: string;
+
+    @Column({ type: 'varchar', length: 100, })
+    email: string;
+
+    @Column({ type: 'varchar', length: 255, })
+    password: string;
+
+    @Column({ type: 'int', default: 1 })
+    tokenVersion: number;
+
+    @CreateDateColumn({ type: 'timestamp' })
+    createdAt: Date;
+
+    @UpdateDateColumn({ type: 'timestamp' })
+    updatedAt: Date;
+}
