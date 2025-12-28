@@ -5,6 +5,8 @@ import { AppController } from './app.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { User } from './modules/user/entity/user.entity';
 import { AuthModule } from './modules/auth/auth.module';
+import { TodoModule } from './modules/todo/todo.module';
+import { Todo } from './modules/user/entity/todo.entity';
 
 @Module({
     imports: [
@@ -20,6 +22,7 @@ import { AuthModule } from './modules/auth/auth.module';
                 database: configService.get('DATABASE_NAME'),
                 entities: [
                     User,
+                    Todo
                 ],
                 synchronize: configService.get('DATABASE_SYNCHRONIZE') === 'true',
                 ssl: false,
@@ -27,6 +30,7 @@ import { AuthModule } from './modules/auth/auth.module';
             inject: [ConfigService],
         }),
         AuthModule,
+        TodoModule,
     ],
     controllers: [AppController],
     providers: [AppService],
