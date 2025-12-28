@@ -115,6 +115,9 @@
     border: none;
     box-shadow: 0 14px 32px rgba(200, 152, 68, 0.32);
     transition: transform var(--transition-base), box-shadow var(--transition-base);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px; /* Ensure touch target meets accessibility guidelines */
 }
 
 .auth-submit:hover:not(:disabled) {
@@ -138,12 +141,139 @@
     font-weight: 600;
 }
 
-@media (max-width: 600px) {
+/* Tablet and below */
+@media (max-width: 768px) {
+    .auth-page {
+        padding: 2rem 1rem;
+    }
+
     .auth-card {
         padding: 2.5rem 2rem;
+        border-radius: 24px;
     }
 
     .auth-brand h1 {
         font-size: 1.75rem;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+    .auth-page {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .auth-card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+        gap: 1.75rem;
+    }
+
+    .auth-brand h1 {
+        font-size: 1.6rem;
+    }
+
+    .auth-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .auth-form {
+        gap: 1.25rem;
+    }
+
+    .auth-input {
+        padding: 0.875rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .auth-submit {
+        padding: 0.875rem;
+        font-size: 0.95rem;
+    }
+
+    .auth-field label {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .auth-page {
+        padding: 1rem 0.5rem;
+    }
+
+    .auth-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 18px;
+        gap: 1.5rem;
+    }
+
+    .auth-brand h1 {
+        font-size: 1.5rem;
+    }
+
+    .auth-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .auth-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .auth-form {
+        gap: 1.15rem;
+    }
+
+    .auth-field {
+        gap: 0.4rem;
+    }
+
+    .auth-field label {
+        font-size: 0.85rem;
+    }
+
+    .auth-input {
+        padding: 0.8rem 0.95rem;
+        font-size: 0.9rem;
+        border-radius: 12px;
+    }
+
+    .auth-submit {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        border-radius: 12px;
+        min-height: 44px; /* Ensure touch target meets accessibility guidelines */
+    }
+
+    .auth-meta {
+        font-size: 0.9rem;
+    }
+
+    .auth-error {
+        font-size: 0.8rem;
+    }
+
+    .auth-alert {
+        padding: 0.875rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 12px;
+    }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+    .auth-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .auth-brand h1 {
+        font-size: 1.4rem;
+    }
+
+    .auth-logo {
+        width: 40px;
+        height: 40px;
     }
 }
