@@ -15,8 +15,12 @@
   "dependencies": {
     "@nestjs/common": "^11.1.10",
     "@nestjs/config": "^4.0.2",
+    "@nestjs/jwt": "^11.0.2",
     "@nestjs/platform-express": "^11.1.10",
+    "@nestjs/swagger": "^11.2.3",
     "@nestjs/typeorm": "^11.0.0",
+    "bcrypt": "^6.0.0",
+    "class-validator": "^0.14.3",
     "express": "^5.2.1",
     "pg": "^8.16.3"
   },

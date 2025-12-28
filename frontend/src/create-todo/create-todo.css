@@ -1,0 +1,313 @@
+.create-todo-page {
+    min-height: 100vh;
+    background: transparent;
+}
+
+.create-todo-page .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(37, 99, 235, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-blue);
+    box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.1);
+}
+
+.create-todo-page .logo svg {
+    width: 20px;
+    height: 20px;
+}
+
+.create-todo-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.create-todo-card {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
+    padding: 2.5rem;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 40px 80px rgba(15, 23, 42, 0.16);
+    backdrop-filter: blur(12px);
+}
+
+.create-todo-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.back-button:hover {
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--text-strong);
+    border-color: rgba(148, 163, 184, 0.3);
+}
+
+.back-button:active {
+    transform: scale(0.95);
+}
+
+.back-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+.create-todo-header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-strong);
+    letter-spacing: -0.02em;
+}
+
+.create-todo-alert {
+    padding: 0.95rem 1.2rem;
+    border-radius: 14px;
+    background: rgba(248, 113, 113, 0.12);
+    border: 1px solid rgba(248, 113, 113, 0.25);
+    color: #991b1b;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.create-todo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.create-todo-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.create-todo-field label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.create-todo-input,
+.create-todo-textarea,
+.create-todo-select {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.32);
+    padding: 0.95rem 1.1rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    transition: border var(--transition-base), box-shadow var(--transition-base);
+    font-family: inherit;
+    resize: vertical;
+}
+
+.create-todo-textarea {
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+.create-todo-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%235f6b7a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.create-todo-input:focus,
+.create-todo-textarea:focus,
+.create-todo-select:focus {
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+    outline: none;
+}
+
+.create-todo-input.error,
+.create-todo-textarea.error {
+    border-color: rgba(220, 38, 38, 0.5);
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.18);
+}
+
+.create-todo-field-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 1.25rem;
+}
+
+.create-todo-error {
+    color: var(--error);
+    font-size: 0.85rem;
+}
+
+.create-todo-counter {
+    color: var(--text-soft);
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.create-todo-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.create-todo-cancel,
+.create-todo-submit {
+    flex: 1;
+    border-radius: 14px;
+    padding: 0.95rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px;
+}
+
+.create-todo-cancel {
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--text-muted);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.create-todo-cancel:hover:not(:disabled) {
+    background: rgba(148, 163, 184, 0.15);
+    color: var(--text-strong);
+    border-color: rgba(148, 163, 184, 0.3);
+}
+
+.create-todo-cancel:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.create-todo-submit {
+    background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
+    color: #fff;
+    box-shadow: 0 14px 32px rgba(37, 99, 235, 0.32);
+}
+
+.create-todo-submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.36);
+}
+
+.create-todo-submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.create-todo-submit:disabled,
+.create-todo-cancel:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+    .create-todo-content {
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    .create-todo-card {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    .create-todo-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .back-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .back-button svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .create-todo-content {
+        padding: 1rem 0.75rem 2rem;
+    }
+
+    .create-todo-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 18px;
+    }
+
+    .create-todo-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .create-todo-header h1 {
+        font-size: 1.35rem;
+    }
+
+    .create-todo-form {
+        gap: 1.25rem;
+    }
+
+    .create-todo-input,
+    .create-todo-textarea,
+    .create-todo-select {
+        padding: 0.875rem 1rem;
+        font-size: 0.95rem;
+        border-radius: 12px;
+    }
+
+    .create-todo-textarea {
+        min-height: 100px;
+    }
+
+    .create-todo-actions {
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+    }
+
+    .create-todo-cancel,
+    .create-todo-submit {
+        width: 100%;
+    }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+    .create-todo-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .create-todo-header h1 {
+        font-size: 1.25rem;
+    }
+}
